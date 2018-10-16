@@ -1,0 +1,82 @@
+<div class="container">
+  <div [hidden]="bookUpdated">
+    <mat-card class="add-book-card">
+      <mat-card-header>
+        <mat-card-title>Update Book Information</mat-card-title>
+      </mat-card-header>
+      <form class="add-book-form" (ngSubmit)="updateBook()">
+        <mat-form-field class="add-book-full-width">
+          <input type="text" matInput placeholder="Book Title" [(ngModel)]="book.title" name="title">
+        </mat-form-field>
+        <mat-form-field class="add-book-full-width">
+          <input type="text" matInput placeholder="Author" [(ngModel)]="book.author" name="author">
+        </mat-form-field>
+        <mat-form-field class="add-book-full-width">
+          <input matInput type="date" placeholder="publication Date" [(ngModel)]="book.publicationDate" name="publicationDate">
+        </mat-form-field>
+
+        <mat-form-field class="add-book-full-width">
+          <mat-select placeholder="Category" name="category" [(ngModel)]="book.category">
+            <mat-option value="Management">Management</mat-option>
+            <mat-option value="Fiction">Fiction</mat-option>
+            <mat-option value="Engineering">Engineering</mat-option>
+            <mat-option value="Programming">Programming</mat-option>
+            <mat-option value="Arts &amp; Literature">Arts &amp; Literature</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="add-book-full-width">
+          <mat-select placeholder="Format" name="format" [(ngModel)]="book.format">
+            <mat-option value="paperback">Paperback</mat-option>
+            <mat-option value="hardcover">Hardcover</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="add-book-full-width">
+          <input type="number" matInput placeholder="Number Of Pages" [(ngModel)]="book.numberOfPages" name="publisher">
+        </mat-form-field>
+        <mat-form-field class="add-book-full-width">
+          <input type="text" matInput placeholder="ISBN" [(ngModel)]="book.isbn" name="isbn">
+        </mat-form-field>
+        <mat-grid-list cols="4" rowHeight="60px">
+          <mat-grid-tile [colspan]="2" [rowspan]="1">
+            <mat-form-field>
+              <input matInput id="listPrice" type="number" [(ngModel)]="book.listPrice" name="listPrice" step="0.01" placeholder="List Price">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="2" [rowspan]="1">
+            <mat-form-field>
+              <input matInput id="ourPrice" type="number" [(ngModel)]="book.ourPrice" name="ourPrice" step="0.01" placeholder="Our Price">
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+
+        <mat-form-field class="add-book-full-width">
+          <input type="number" matInput placeholder="Shipping Weight" [(ngModel)]="book.shippingWeight" name="publisher">
+        </mat-form-field>
+        <mat-form-field class="add-book-full-width">
+          <mat-select placeholder="Language" name="language" [(ngModel)]="book.language">
+            <mat-option value="english">English</mat-option>
+            <mat-option value="bangla">Bangla</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="add-book-full-width">
+          <input type="number" matInput placeholder="In Stock Number" [(ngModel)]="book.inStockNumber" name="inStockNumber">
+        </mat-form-field>
+        <mat-form-field class="add-book-full-width">
+          <mat-select placeholder="Status" name="active" [(ngModel)]="book.active">
+            <mat-option value=true>Active</mat-option>
+            <mat-option value=false>In Active</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="add-book-full-width">
+          <textarea matInput placeholder="Description" [(ngModel)]="book.description" name="description"></textarea>
+        </mat-form-field>
+        <button class="mat-primary" mat-raised-button type="submit">Add Book</button>
+        <button class="mat-warn" mat-raised-button routerLink="/">Cancel</button>
+      </form>
+    </mat-card>
+  </div>
+
+  <div class="row" [hidden]="!bookUpdated">
+    <h3>Book Updated successfully!</h3>
+  </div>
+</div>

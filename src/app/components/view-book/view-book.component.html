@@ -1,0 +1,29 @@
+
+<div class="container" style="margin-left: auto;margin-right: auto;max-width: 900px">
+	<div class="table-responsive" style="margin-top: 30px;">
+		<table class="table bordered highlight">
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Author</th>
+					<th>Category</th>
+					<th>List Price</th>
+					<th>Our Price</th>
+					<th>Active?</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>{{book.title}}</td>
+					<td>{{book.author}}</td>
+					<td>{{book.category}}</td>
+					<td>{{book.listPrice}}</td>
+					<td>{{book.ourPrice}}</td>
+					<td>{{book.active}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<button routerLink="/viewBookList" mat-raised-button color="primary" >Back To Book List</button>
+	<button (click)="onSelect(book)" mat-raised-button color="primary" >Edit</button>
+</div>
